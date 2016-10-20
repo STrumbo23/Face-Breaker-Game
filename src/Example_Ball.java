@@ -59,14 +59,13 @@ public class Example_Ball extends Application{
 
 		canvas.getChildren().addAll(circle);
 		
-	      final Timeline loop = new Timeline(new KeyFrame(Duration.millis(50), new EventHandler<ActionEvent>() {
+	      final Timeline loop = new Timeline(new KeyFrame(Duration.millis(100), new EventHandler<ActionEvent>() {
 
 	            double deltaX = 1;
 	            double deltaY = 1;
 	            final Bounds bounds = canvas.getBoundsInLocal();
 	            @Override
 	            public void handle(final ActionEvent t) {
-	            	System.out.println("Test");
 	                circle.setLayoutX(circle.getLayoutX() + deltaX);
 	                circle.setLayoutY(circle.getLayoutY() + deltaY);
 	                

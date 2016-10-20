@@ -40,7 +40,6 @@ public class MainMenu extends Application {
 		StackPane root = new StackPane();
 		StackPane.setAlignment(title, Pos.TOP_CENTER);
         root.getChildren().addAll(title, buttons);
-        
         Scene scene = new Scene(root, 800, 500);
         scene.getStylesheets().add(this.getClass()
         		.getResource("stylesheet.css").toExternalForm());
