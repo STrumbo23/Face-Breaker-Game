@@ -30,7 +30,13 @@ public class MainMenu extends Application {
 		Button highScore = new Button("High Scores");
 		Button help = new Button("Help");
 		Button settings = new Button("Settings");
-	
+
+		playGame.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		        PlayGame newGame = new PlayGame();
+		    }
+		});
+		
 		VBox buttons = new VBox();
 		buttons.setSpacing(10);
 		buttons.setPadding(new Insets(10, 20, 10, 20)); 
