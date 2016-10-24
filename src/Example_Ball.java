@@ -27,9 +27,21 @@ import javafx.event.EventHandler;
 
 public class Example_Ball extends Application {
 
-	public void start(final Stage primaryStage){
+	boolean atBottomBorder;
+	int gameSizeX=750;
+	int gameSizeY=700;
+	int offSet = 50;
+	
+	public void setAtBottomBorder(boolean value){
+		atBottomBorder = value;
+	}
+	public void start(final Stage primaryStage) throws NullPointerException, MatrixOutOfBoundsException{
+		
+		
+		Matrix_Brick <Object> gridMatrix = new Matrix_Brick<> (10,offSet);
 		Pane canvas = new Pane();
-		Scene scene = new Scene(canvas, 800,700);
+		Puzzle_Maker puzzleMaker = new Puzzle_Maker(gameSizeX,offSet,canvas);
+		Scene scene = new Scene(canvas, gameSizeX,gameSizeY);
 		primaryStage.setTitle("Example Ball");
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -93,9 +105,14 @@ public class Example_Ball extends Application {
 //	      });
 		circle.setLayoutX(250);
 		circle.setLayoutY(250);
-
-		canvas.getChildren().addAll(circle,paddle);
 		
+		canvas.getChildren().addAll(circle,paddle);
+//		for (int i=0; i<15; i++){
+//			Brick brick = new Brick(Color.RED, ((i*4)%(gameSizeX/gridMatrix.offSet))*gridMatrix.offSet, ((i*4)/(gameSizeX/gridMatrix.offSet)*gridMatrix.offSet), gridMatrix.offSet,gridMatrix.offSet);
+//			brick.addBlock(canvas);
+//			gridMatrix.add(brick, (i*3)+4);
+//		}
+		puzzleMaker.makePuzzle(Color.GREEN,5,10,8);
 	      final Timeline loop = new Timeline(new KeyFrame(Duration.millis(5), new EventHandler<ActionEvent>() {
 
 	            double deltaX = 1;
@@ -109,12 +126,12 @@ public class Example_Ball extends Application {
 	                circle.setLayoutY(circle.getLayoutY() + deltaY);
 	                
 	                
-	                System.out.println("X Max: "+paddle.getLayoutX());
-	                System.out.println("Y Max: "+paddle.getLayoutY());
+	                //System.out.println("X Max: "+paddle.getLayoutX());
+	                //System.out.println("Y Max: "+paddle.getLayoutY());
 
 	                final boolean atRightBorder = circle.getLayoutX() >= (bounds.getMaxX()-circle.getRadius());
 	                final boolean atLeftBorder = circle.getLayoutX() <= (bounds.getMinX() + circle.getRadius());
-	                final boolean atBottomBorder = circle.getLayoutY() >= (bounds.getMaxY() - circle.getRadius());
+	                setAtBottomBorder(circle.getLayoutY() >= (bounds.getMaxY() - circle.getRadius()));
 	                final boolean atTopBorder = circle.getLayoutY() <= (bounds.getMinY() + circle.getRadius());
 	                
 	                if(circle.getLayoutY()==paddle.getLayoutY()-circle.getRadius()&&circle.getLayoutX()>=paddle.getLayoutX()-20&&circle.getLayoutX()<=paddle.getLayoutX()+100){
@@ -125,8 +142,11 @@ public class Example_Ball extends Application {
 	                if (atRightBorder || atLeftBorder) {
 	                    deltaX *= -1;
 	                }
-	                if (atBottomBorder || atTopBorder) {
+	                if ( atTopBorder) {
 	                    deltaY *= -1;
+	                }if (atBottomBorder){
+	                	System.out.println("You just lost the ball!");
+	                	primaryStage.close();
 	                }
 	                
 	                
@@ -135,6 +155,7 @@ public class Example_Ball extends Application {
 
 	        loop.setCycleCount(Timeline.INDEFINITE);
 	        loop.play();
+	        
 		
 		
 	}
