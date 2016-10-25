@@ -6,12 +6,18 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBase;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -32,7 +38,17 @@ public class MainMenu extends Application {
 		Button playGame = new Button("Click to Play!");
 		Button highScore = new Button("High Scores");
 		Button help = new Button("Help");
-		Button settings = new Button("Settings");
+		
+		Rectangle soundSettings = new Rectangle();
+		soundSettings.setWidth(50);
+		soundSettings.setHeight(50);
+		
+		Image soundOn = new Image(getClass().getResource("sound_on.png").toExternalForm());
+		ImagePattern soundOnView = new ImagePattern(soundOn);
+		Image soundOff = new Image(getClass().getResource("music_off-512.png").toExternalForm());
+		ImagePattern soundOffView = new ImagePattern(soundOff);
+		
+		soundSettings.setFill(soundOnView);
 
 		playGame.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
@@ -40,10 +56,16 @@ public class MainMenu extends Application {
 		    }
 		});
 		
+		 soundSettings.setOnMouseClicked(new EventHandler<MouseEvent>(){
+	            @Override public void handle(MouseEvent t) {
+	            	soundSettings.setFill(soundOffView);
+	          }
+		});
+		
 		VBox buttons = new VBox();
 		buttons.setSpacing(10);
 		buttons.setPadding(new Insets(10, 20, 10, 20)); 
-		buttons.getChildren().addAll(playGame, highScore, help, settings);
+		buttons.getChildren().addAll(playGame, highScore, help, soundSettings);
 		buttons.getStyleClass().add("buttons");
 
 		StackPane root = new StackPane();
