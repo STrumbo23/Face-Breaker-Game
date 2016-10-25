@@ -16,7 +16,9 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class MainMenu extends Application {
-
+	
+	Example_Ball exampleBall = new Example_Ball();
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -34,7 +36,7 @@ public class MainMenu extends Application {
 
 		playGame.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		        PlayGame newGame = new PlayGame();
+		    	//exampleBall.start(mainStage);
 		    }
 		});
 		
