@@ -63,12 +63,14 @@ public class MainMenu extends Application {
 		VBox buttons = new VBox();
 		buttons.setSpacing(10);
 		buttons.setPadding(new Insets(10, 20, 10, 20)); 
-		buttons.getChildren().addAll(playGame, highScore, help, soundSettings);
+		buttons.getChildren().addAll(playGame, highScore, help);
 		buttons.getStyleClass().add("buttons");
+		
+//		soundSettings.setAlignment
 
 		StackPane root = new StackPane();
 		StackPane.setAlignment(title, Pos.TOP_CENTER);
-        root.getChildren().addAll(title, buttons);
+        root.getChildren().addAll(title, buttons, soundSettings);
         Scene scene = new Scene(root, 800, 500);
         scene.getStylesheets().add(this.getClass()
         		.getResource("stylesheet.css").toExternalForm());
