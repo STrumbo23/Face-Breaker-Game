@@ -23,8 +23,6 @@ import javafx.stage.Stage;
 
 public class MainMenu extends Application {
 	
-	Example_Ball exampleBall = new Example_Ball();
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -52,7 +50,7 @@ public class MainMenu extends Application {
 
 		playGame.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		    	//exampleBall.start(mainStage);
+		    	PlayGame newGame = new PlayGame();
 		    }
 		});
 		
