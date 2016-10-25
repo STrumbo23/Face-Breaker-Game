@@ -23,6 +23,7 @@ public class Brick {
 		this.brick = new Rectangle (width,height,color);
 		brick.setLayoutX(xPosition);
 		brick.setLayoutY(yPosition);
+		brick.setStroke(Color.BLACK);
 		this.boundary=brick.getBoundsInLocal();
 		
 	}
