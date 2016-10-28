@@ -66,10 +66,12 @@ public class MainMenu extends Application {
 		buttons.getChildren().addAll(playGame, highScore, help);
 		buttons.getStyleClass().add("buttons");
 		
-//		soundSettings.setAlignment
 
 		StackPane root = new StackPane();
 		StackPane.setAlignment(title, Pos.TOP_CENTER);
+		StackPane.setAlignment(soundSettings, Pos.BOTTOM_RIGHT);
+		StackPane.setMargin(soundSettings, new Insets(20, 20, 20, 20));
+		
         root.getChildren().addAll(title, buttons, soundSettings);
         Scene scene = new Scene(root, 800, 500);
         scene.getStylesheets().add(this.getClass()
