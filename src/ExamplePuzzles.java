@@ -1,26 +1,322 @@
+import java.util.Random;
+
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
 public class ExamplePuzzles {
 	Puzzle_Maker puzzleMaker;
-	
+	Random randomGenerator;
+	Random randomGeneratorSeed;
 	public ExamplePuzzles(int windowSize, int offSet, Pane canvas){
 		puzzleMaker = new Puzzle_Maker (windowSize,offSet,canvas);
+		randomGeneratorSeed = new Random(125);
+		randomGenerator = new Random(randomGeneratorSeed.nextInt());
 	}
 	
 	public void level(int i){
 		switch (i){
-			case 1: puzzleMaker.makePuzzle(Color.YELLOWGREEN, 7, 8, 9, 21, 25, 35, 41, 49, 57, 64, 72, 80, 86, 96, 100, 112, 113, 114, 52,
-					53, 67, 68, 54, 69);
+			case 1: String level1= "x0x0x0x0x0x0x0x"
+					             + "0x0x0x0x0x0x0x0"
+								 + "x0x0x0x0x0x0x0x"
+								 + "0x0x0x0x0x0x0x0"
+								 + "x0x0x0x0x0x0x0x"
+								 + "0x0x0x0x0x0x0x0"
+								 + "x0x0x0x0x0x0x0x"
+								 + "0x0x0x0x0x0x0x0";
+					puzzleMaker.makePuzzle(Color.YELLOWGREEN, level1);
 					break;
-			case 2: puzzleMaker.makePuzzle(Color.ORANGE, 7,8,9,21,22,24,25,35,36,40,41,49,50,52,54,56,57,63,64,67,69,72,73,78,79,87,88,93,94,96,97,99,100,102,103,109,110,112,113,114,116,117,125,126,130,131,141,142,144,145,157,158,159);
+			case 2: String level2= "x0x0x0x0x0x0x0x"
+								  +"x0x0x0x0x0x0x0x"
+								  +"x0x0x0x0x0x0x0x"
+								  +"x0x0x0x0x0x0x0x"
+								  +"x0x0x0x0x0x0x0x"
+								  +"x0x0x0x0x0x0x0x"
+								  +"x0x0x0x0x0x0x0x"
+								  +"x0x0x0x0x0x0x0x"; 
+				puzzleMaker.makePuzzle(Color.ORANGE, level2);
 					break;
-			case 3: puzzleMaker.makePuzzle(Color.CRIMSON, 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,83,85,87,89,91,93,95,97,99,101,103,105,107,109,111,113,115,117,119,121,123,125,127,129,131,133,135);
+			case 3: String level3= "000000xxx000000"
+								  +"0000xxxxxxx0000"
+								  +"00xxxxxxxxxxx00"
+								  +"xxxxxxxxxxxxxxx"
+								  +"00xxxxxxxxxxx00"
+								  +"0000xxxxxxx0000"
+								  +"000000xxx000000"
+								  +"0000xxxxxxx0000"
+								  +"00xxxxxxxxxxx00"
+								  +"xxxxxxxxxxxxxxx"
+								  +"00xxxxxxxxxxx00"
+								  +"0000xxxxxxx0000"
+								  +"000000xxx000000"
+								  +"000000000000000"
+								  +"000000000000000";
+				puzzleMaker.makePuzzle(Color.CRIMSON, level3);
 					break;
-			case 4: puzzleMaker.makePuzzle(Color.LIGHTBLUE,1,16,31,46,61,76,91,106,121,136,15,30,45,60,75,90,105,120,135,150,3,18,33,48,63,78,93,108,123,138,5,20,35,50,65,80,95,110,125,140,7,22,37,52,67,82,97,112,127,142,9,24,39,54,69,84,99,114,129,144,11,26,41,56,71,86,101,116,131,146,13,28,43,58,73,88,103,118,133,148);
+			case 4: String level4= "xxxxxxxxxxxxxxx"
+					  			  +"00000xxxxx00000"
+					              +"xxxxxxxxxxxxxxx"
+					              +"00000xxxxx00000"
+					              +"xxxxxxxxxxxxxxx"
+					              +"00000xxxxx00000"
+					              +"xxxxxxxxxxxxxxx"
+					              +"00000xxxxx00000"
+					              +"xxxxxxxxxxxxxxx"
+					              +"00000xxxxx00000"
+					              +"xxxxxxxxxxxxxxx"
+					              +"00000xxxxx00000"
+					              +"xxxxxxxxxxxxxxx"
+					              +"000000000000000"
+					              +"000000000000000"; 
+				puzzleMaker.makePuzzle(Color.LIGHTBLUE,level4);
 					break;
-			case 5:  
-					break;
+			case 5: String level5= "000000xxx000000"
+					  			  +"000000xxx000000"
+					  			  +"000000xxx000000"
+					  			  +"000000xxx000000"
+					  			  +"000000xxx000000"
+					  			  +"000000xxx000000"
+					  			  +"xxxxxxxxxxxxxxx"
+					  			  +"xxxxxxxxxxxxxxx"
+					  			  +"xxxxxxxxxxxxxxx"
+					  			  +"000000xxx000000"
+					  			  +"000000xxx000000"
+					  			  +"000000xxx000000"
+					  			  +"000000xxx000000"
+					  			  +"000000xxx000000"
+					  			  +"000000xxx000000";
+				puzzleMaker.makePuzzle(Color.DARKGRAY, level5);
+				break;
+			case 6: String level6= "xxxxxxxxxxxxxxx"
+		  			  			  +"xx0000xxx0000xx"
+		  			  			  +"x0x000xxx000x0x"
+		  			  			  +"x00x00xxx00x00x"
+		  			  			  +"x000x0xxx0x000x"
+		  			     		  +"x0000xxxxx0000x"
+		  			     		  +"xxxxxxxxxxxxxxx"
+		  			     		  +"xxxxxxxxxxxxxxx"
+		  			     		  +"xxxxxxxxxxxxxxx"
+		  			     		  +"x0000xxxxx0000x"
+		  			     		  +"x000x0xxx0x000x"
+		  			     		  +"x00x00xxx00x00x"
+		  			     		  +"x0x000xxx000x0x"
+		  			     		  +"xx0000xxx0000xx"
+		  			     		  +"xxxxxxxxxxxxxxx";
+				puzzleMaker.makePuzzle(Color.BLUEVIOLET,level6);
+				break;
+			case 7: String level7= "xxxxxxxxxxxxxxx"
+		  			  			  +"0x00000000000x0"
+		  			  			  +"00x000000000x00"
+		  			  			  +"000x0000000x000"
+		  			  			  +"0000x00000x0000"
+		  			  			  +"00000x000x00000"
+		  			  			  +"000000x0x000000"
+		  			  			  +"0000000x0000000"
+		  			  			  +"000000x0x000000"
+		  			  			  +"00000x000x00000"
+		  			  			  +"0000x00000x0000"
+		  			  			  +"000x0000000x000"
+		  			  			  +"00x000000000x00"
+		  			  			  +"0x00000000000x0"
+		  			  			  +"xxxxxxxxxxxxxxx";
+				puzzleMaker.makePuzzle(Color.BROWN, level7);
+				break;
+			case 8: String level8= "000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000";
+				puzzleMaker.makePuzzle(Color.BROWN, level8);
+				break;
+			case 9: String level9= "000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000"
+		  			  			  +"000000000000000";
+				puzzleMaker.makePuzzle(Color.BROWN, level9);
+				break;
+			case 10: String level10= "000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000";
+				puzzleMaker.makePuzzle(Color.BROWN, level10);
+				break;
+			case 11: String level11= "000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000";
+				puzzleMaker.makePuzzle(Color.BROWN, level11);
+				break;
+			case 12: String level12= "000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000";
+				puzzleMaker.makePuzzle(Color.BROWN, level12);
+				break;
+			case 13: String level13= "000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000"
+		  			  			   +"000000000000000";
+				puzzleMaker.makePuzzle(Color.BROWN, level13);
+				break;
+			case 14: String level14= "000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000";
+				puzzleMaker.makePuzzle(Color.BROWN, level14);
+				break;
+			case 15: String level15= "000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000"
+		  			  				+"000000000000000";
+				puzzleMaker.makePuzzle(Color.BROWN, level15);
+				break;
+			case 16: int[] randomPuzzle16 = new int[80];
+				for (int x=0; x<randomPuzzle16.length; x++){
+					randomPuzzle16[x] = randomGenerator.nextInt(150);
+				}
+				puzzleMaker.makePuzzle(Color.AZURE,randomPuzzle16);
+				break;
+			case 17: int[] randomPuzzle17 = new int[80];
+			for (int x=0; x<randomPuzzle17.length; x++){
+				randomPuzzle17[x] = randomGenerator.nextInt(150);
+			}
+			puzzleMaker.makePuzzle(Color.AZURE,randomPuzzle17);
+			break;
+			case 18: int[] randomPuzzle18 = new int[80];
+			for (int x=0; x<randomPuzzle18.length; x++){
+				randomPuzzle18[x] = randomGenerator.nextInt(150);
+			}
+			puzzleMaker.makePuzzle(Color.AZURE,randomPuzzle18);
+			break;
+			case 19: int[] randomPuzzle19 = new int[80];
+			for (int x=0; x<randomPuzzle19.length; x++){
+				randomPuzzle19[x] = randomGenerator.nextInt(150);
+			}
+			puzzleMaker.makePuzzle(Color.AZURE,randomPuzzle19);
+			break;
+			case 20: int[] randomPuzzle20 = new int[80];
+			for (int x=0; x<randomPuzzle20.length; x++){
+				randomPuzzle20[x] = randomGenerator.nextInt(150);
+			}
+			puzzleMaker.makePuzzle(Color.AZURE,randomPuzzle20);
+			break;
+			case 21: int[] randomPuzzle21 = new int[80];
+			for (int x=0; x<randomPuzzle21.length; x++){
+				randomPuzzle21[x] = randomGenerator.nextInt(150);
+			}
+			puzzleMaker.makePuzzle(Color.AZURE,randomPuzzle21);
+			break;
+			case 22: int[] randomPuzzle22 = new int[80];
+			for (int x=0; x<randomPuzzle22.length; x++){
+				randomPuzzle22[x] = randomGenerator.nextInt(150);
+			}
+			puzzleMaker.makePuzzle(Color.AZURE,randomPuzzle22);
+			break;
+			case 23: int[] randomPuzzle23 = new int[80];
+			for (int x=0; x<randomPuzzle23.length; x++){
+				randomPuzzle23[x] = randomGenerator.nextInt(150);
+			}
+			puzzleMaker.makePuzzle(Color.AZURE,randomPuzzle23);
+			break;
+			case 24: int[] randomPuzzle24 = new int[80];
+			for (int x=0; x<randomPuzzle24.length; x++){
+				randomPuzzle24[x] = randomGenerator.nextInt(150);
+			}
+			puzzleMaker.makePuzzle(Color.AZURE,randomPuzzle24);
+			break;
+			case 25: int[] randomPuzzle25 = new int[80];
+			for (int x=0; x<randomPuzzle25.length; x++){
+				randomPuzzle25[x] = randomGenerator.nextInt(150);
+			}
+			puzzleMaker.makePuzzle(Color.AZURE,randomPuzzle25);
+			break;
+			
 			default: System.out.println();
 					break;
 		}
