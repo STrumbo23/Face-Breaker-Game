@@ -84,7 +84,7 @@ public class HighScore {
 	
 	public String getHighScoreString() {
 		String highScoreString = "";
-		int max = 10;
+		int max = 50;
 		
 		ArrayList<score> scores;
 		scores = getScores();
