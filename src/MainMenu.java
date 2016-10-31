@@ -64,7 +64,7 @@ public class MainMenu extends Application {
 		playGame.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				PlayGame newGame = new PlayGame();
-				System.out.println("clicked");
+				mainStage.close();
 			}
 		});
 	   
