@@ -25,7 +25,7 @@ public class PlayGame {
 		Label selectLevel = new Label("Please select a level:");
 		selectLevel.setTranslateY(-250);
 
-		for (int i = 1; i <= 50; i++) {
+		for (int i = 1; i <= 40; i++) {
 			final int levelSelection = i;
 			Button level = new Button("Level " + i);
 			level.setTranslateX((-267 + (133 * ((i-1)%5))));
@@ -43,3 +43,4 @@ public class PlayGame {
 		stage.show();
 	}
 }
+
