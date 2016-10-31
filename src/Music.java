@@ -4,7 +4,7 @@ import javax.sound.sampled.*;
 
 public class Music 
 {
-	public static void playBitQuest(File sound)
+	public static void playBitQuest()
 	{
 		try
 		{
@@ -13,9 +13,7 @@ public class Music
 			AudioInputStream ais = AudioSystem.getAudioInputStream(f);
 	        clip.open(ais);
 	        clip.start();
-	        new Thread(){
-	        	
-	        }
+	        Thread.sleep(clip.getMicrosecondLength()/500);
 		}
 		catch(Exception e)
 		{

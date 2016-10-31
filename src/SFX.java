@@ -5,12 +5,13 @@ import javax.sound.sampled.Clip;
 
 public class SFX
 {
-	public static void playBoop(File sound)
+	public static void playBoop()
 	{
 		try
 		{
+			File Boop = new File("src/Boop.wav");
 			Clip clip = AudioSystem.getClip();
-			clip.open(AudioSystem.getAudioInputStream(sound));
+			clip.open(AudioSystem.getAudioInputStream(Boop));
 			clip.start();
 			Thread.sleep(clip.getMicrosecondLength()/500);
 		}
@@ -19,12 +20,13 @@ public class SFX
 			e.printStackTrace();
 		}
 	}
-	public static void playBounce(File sound)
+	public static void playBounce()
 	{
 		try
 		{
+			File Bounce = new File("src/Bounce.wav");
 			Clip clip = AudioSystem.getClip();
-			clip.open(AudioSystem.getAudioInputStream(sound));
+			clip.open(AudioSystem.getAudioInputStream(Bounce));
 			clip.start();
 			Thread.sleep(clip.getMicrosecondLength()/500);
 		}
