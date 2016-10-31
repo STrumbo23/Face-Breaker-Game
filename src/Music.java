@@ -1,7 +1,6 @@
 import java.io.File;
 
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import javax.sound.sampled.*;
 
 public class Music 
 {
@@ -9,14 +8,19 @@ public class Music
 	{
 		try
 		{
+			File f = new File("src/BitQuest.wav");
 			Clip clip = AudioSystem.getClip();
-			clip.open(AudioSystem.getAudioInputStream(sound));
-			clip.start();
-			Thread.sleep(clip.getMicrosecondLength()/500);
+			AudioInputStream ais = AudioSystem.getAudioInputStream(f);
+	        clip.open(ais);
+	        clip.start();
+	        new Thread(){
+	        	
+	        }
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
+		
 	}
 }
