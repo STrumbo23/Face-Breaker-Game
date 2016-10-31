@@ -25,6 +25,7 @@ public class ScoreMainClass extends Application {
 		HighScore hs = new HighScore();
 		hs.addScore("jarrett", 900);
 		
+		
 		StackPane root = new StackPane();
 		Scene scene = new Scene(root, 500, 300);
 		mainStage.setScene(scene);
