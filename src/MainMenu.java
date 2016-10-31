@@ -66,6 +66,12 @@ public class MainMenu extends Application {
 			}
 		});
 	   
+		highScore.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				ScoreMainClass highscores = new ScoreMainClass();
+				mainStage.close();
+			}
+		});
 		StackPane root = new StackPane();
 		StackPane.setAlignment(title, Pos.TOP_CENTER);
 		
