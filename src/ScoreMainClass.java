@@ -6,6 +6,15 @@ import javafx.stage.Stage;
 public class ScoreMainClass extends Application {
 
 	public static void main(String[] args) {
+
+		HighScore hs = new HighScore();
+		hs.addScore("Jarrett", 1);
+		hs.addScore("John", 2);
+		hs.addScore("Laura", 3);
+		hs.addScore("Hunter", 4);
+		hs.addScore("Sean", 5);
+
+		
 		/*HighScore hs = new HighScore();
 		hs.addScore("Jarrett", 9001);
 		hs.addScore("John", 230);
@@ -14,6 +23,7 @@ public class ScoreMainClass extends Application {
 		hs.addScore("Sean", 200);
 		*/
 		//System.out.println(hs.getHighScoreString());
+
 		
 		launch(args);
 	}

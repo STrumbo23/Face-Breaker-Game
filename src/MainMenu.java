@@ -38,6 +38,7 @@ public class MainMenu extends Application {
 		Label title = new Label("FACE BREAKER GAME");
 		title.getStyleClass().add("title");
 		
+		
 		Button playGame = new Button("Click to Play!");
 		Button highScore = new Button("High Scores");
 		Button help = new Button("Help");
