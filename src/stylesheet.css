@@ -19,3 +19,7 @@
 .buttons {
 	-fx-alignment: CENTER;
 }
+
+.hbox {
+	-fx-alignment: BOTTOM_CENTER;
+	}

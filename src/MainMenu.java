@@ -49,9 +49,10 @@ public class MainMenu extends Application {
 		soundOff.setToggleGroup(group);
 
 		HBox hbox = new HBox();
-	    hbox.getChildren().add(soundOn);
-	    hbox.getChildren().add(soundOff);
-		
+	    hbox.getChildren().addAll(soundOn, soundOff);
+	    hbox.setPadding(new Insets(0, 0, 50, 0));
+	    hbox.getStyleClass().add("hbox");
+	    
 		VBox buttons = new VBox();
 		buttons.setSpacing(10);
 		buttons.setPadding(new Insets(10, 20, 10, 20)); 
@@ -67,7 +68,6 @@ public class MainMenu extends Application {
 		
 		StackPane root = new StackPane();
 		StackPane.setAlignment(title, Pos.TOP_CENTER);
-		StackPane.setAlignment(hbox, Pos.BOTTOM_CENTER);
 		
         root.getChildren().addAll(title, buttons, hbox);
         Scene scene = new Scene(root, 800, 500);
