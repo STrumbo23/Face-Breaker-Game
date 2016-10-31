@@ -53,23 +53,26 @@ public class MainMenu extends Application {
 	    hbox.setPadding(new Insets(0, 0, 50, 0));
 	    hbox.getStyleClass().add("hbox");
 	    
+		 
 		VBox buttons = new VBox();
 		buttons.setSpacing(10);
 		buttons.setPadding(new Insets(10, 20, 10, 20)); 
-		buttons.getChildren().addAll(playGame, highScore, help);
+		buttons.getChildren().addAll(playGame, highScore, help, hbox);
 		buttons.getStyleClass().add("buttons");
 		
+
 		playGame.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
 				PlayGame newGame = new PlayGame();
+				System.out.println("clicked");
 			}
 		});
-		
+	   
 		StackPane root = new StackPane();
 		StackPane.setAlignment(title, Pos.TOP_CENTER);
 		
-        root.getChildren().addAll(title, buttons, hbox);
+        root.getChildren().addAll(title, buttons);
         Scene scene = new Scene(root, 800, 500);
         scene.getStylesheets().add(this.getClass()
         		.getResource("stylesheet.css").toExternalForm());
