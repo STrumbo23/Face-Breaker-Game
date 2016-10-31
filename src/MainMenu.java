@@ -36,43 +36,19 @@ public class MainMenu extends Application {
 		Button playGame = new Button("Click to Play!");
 		Button highScore = new Button("High Scores");
 		Button help = new Button("Help");
-		
-		Rectangle soundSettings = new Rectangle();
-		soundSettings.setWidth(50);
-		soundSettings.setHeight(50);
-		
-		Image soundOn = new Image(getClass().getResource("sound_on.png").toExternalForm());
-		ImagePattern soundOnView = new ImagePattern(soundOn);
-		Image soundOff = new Image(getClass().getResource("music_off-512.png").toExternalForm());
-		ImagePattern soundOffView = new ImagePattern(soundOff);
-		
-		soundSettings.setFill(soundOnView);
-
-		playGame.setOnAction(new EventHandler<ActionEvent>() {
-		    @Override public void handle(ActionEvent e) {
-		    	PlayGame newGame = new PlayGame();
-		    }
-		});
-		
-		 soundSettings.setOnMouseClicked(new EventHandler<MouseEvent>(){
-	            @Override public void handle(MouseEvent t) {
-	            	soundSettings.setFill(soundOffView);
-	          }
-		});
-		
+		Button soundSettings = new Button("Sound Settings");
+	
 		VBox buttons = new VBox();
 		buttons.setSpacing(10);
 		buttons.setPadding(new Insets(10, 20, 10, 20)); 
-		buttons.getChildren().addAll(playGame, highScore, help);
+		buttons.getChildren().addAll(playGame, highScore, help, soundSettings);
 		buttons.getStyleClass().add("buttons");
 		
 
 		StackPane root = new StackPane();
 		StackPane.setAlignment(title, Pos.TOP_CENTER);
-		StackPane.setAlignment(soundSettings, Pos.BOTTOM_RIGHT);
-		StackPane.setMargin(soundSettings, new Insets(20, 20, 20, 20));
 		
-        root.getChildren().addAll(title, buttons, soundSettings);
+        root.getChildren().addAll(title, buttons);
         Scene scene = new Scene(root, 800, 500);
         scene.getStylesheets().add(this.getClass()
         		.getResource("stylesheet.css").toExternalForm());
