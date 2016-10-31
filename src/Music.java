@@ -1,22 +1,24 @@
 import java.io.File;
 
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import javax.sound.sampled.*;
 
 public class Music 
 {
-	public static void playBitQuest(File sound)
+	public static void playBitQuest()
 	{
 		try
 		{
+			File f = new File("src/BitQuest.wav");
 			Clip clip = AudioSystem.getClip();
-			clip.open(AudioSystem.getAudioInputStream(sound));
-			clip.start();
-			Thread.sleep(clip.getMicrosecondLength()/500);
+			AudioInputStream ais = AudioSystem.getAudioInputStream(f);
+	        clip.open(ais);
+	        clip.start();
+	        Thread.sleep(clip.getMicrosecondLength()/500);
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
+		
 	}
 }
