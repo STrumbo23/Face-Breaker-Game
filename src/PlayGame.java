@@ -25,6 +25,9 @@ public class PlayGame {
 		Label selectLevel = new Label("Please select a level:");
 		selectLevel.setTranslateY(-250);
 
+		Button back = new Button("Back");
+		back.setTranslateX(-330);
+		back.setTranslateY(-330);
 		for (int i = 1; i <= 40; i++) {
 			final int levelSelection = i;
 			Button level = new Button("Level " + i);
@@ -38,7 +41,7 @@ public class PlayGame {
 			});
 			pane.getChildren().add(level);
 		}
-		pane.getChildren().addAll(title,separator1,selectLevel);
+		pane.getChildren().addAll(back,title,separator1,selectLevel);
 		stage.setScene(scene);
 		stage.show();
 	}
