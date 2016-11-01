@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -6,6 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
@@ -21,6 +24,7 @@ public class MainMenu extends Application {
 	
 	@Override 
 	public void start(Stage mainStage) {
+		
 		mainStage.setTitle("FaceBreaker Game!");
 		Label title = new Label("FACE BREAKER GAME");
 		title.getStyleClass().add("title");
@@ -60,6 +64,23 @@ public class MainMenu extends Application {
 				mainStage.close();
 			}
 		});
+		group.selectedToggleProperty().addListener(new ChangeListener<Toggle>(){
+		    public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
+		         if (group.getSelectedToggle() != null) {
+		        	 if(soundOn.isSelected()) {
+		        		 System.out.println("soundon");
+		        		 SoundTest using_sound = new SoundTest();
+		        		 boolean soundSetting = true;
+		        	 }
+		        	 if(soundOff.isSelected()) {
+		        		 System.out.println("soundoff");
+		        		 boolean soundSetting = false;
+		        	 }
+		         }
+		     }
+		});
+		
+
 		StackPane root = new StackPane();
 		StackPane.setAlignment(title, Pos.TOP_CENTER);
 		
