@@ -29,8 +29,10 @@ public class MainMenu extends Application {
 	
 	@Override 
 	public void start(Stage mainStage) {
-		java.net.URL bitQuest = getClass().getResource("BitQuest.wav");
-		final AudioClip clip = new AudioClip(bitQuest.toString());
+		//java.net.URL bitQuest = getClass().getResource("BitQuest.wav");
+		//final AudioClip clip = new AudioClip(bitQuest.toString());
+		Music playMusic = new Music();
+		AudioClip playBGMusic = playMusic.playBitQuest();
 		
 		mainStage.setTitle("FaceBreaker Game!");
 		Label title = new Label("FACE BREAKER GAME");
@@ -75,11 +77,12 @@ public class MainMenu extends Application {
 		    public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
 		         if (group.getSelectedToggle() != null) {
 		        	 if(soundOn.isSelected()) {
-		        		 clip.play(1.0);
-		        		 boolean soundSetting = true;
+		        		
+		        		playBGMusic.play(1.0);
+		        		boolean soundSetting = true;
 		        	 }
 		        	 if(soundOff.isSelected()) {
-		        		 clip.stop();
+		        		 playBGMusic.stop();
 		        		 boolean soundSetting = false;
 		        	 }
 		         }

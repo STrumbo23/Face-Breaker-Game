@@ -7,7 +7,7 @@ public class SoundTest
 	{
 		SFX.playBoop();
 		SFX.playBounce();
-		Music.playBitQuest();
+		//Music.playBitQuest();
 	
 
 
