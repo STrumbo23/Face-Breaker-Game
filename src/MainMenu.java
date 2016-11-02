@@ -1,3 +1,7 @@
+import java.io.File;
+
+import javax.print.DocFlavor.URL;
+
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -14,6 +18,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 
 public class MainMenu extends Application {
@@ -24,6 +29,8 @@ public class MainMenu extends Application {
 	
 	@Override 
 	public void start(Stage mainStage) {
+		java.net.URL bitQuest = getClass().getResource("BitQuest.wav");
+		final AudioClip clip = new AudioClip(bitQuest.toString());
 		
 		mainStage.setTitle("FaceBreaker Game!");
 		Label title = new Label("FACE BREAKER GAME");
@@ -68,12 +75,11 @@ public class MainMenu extends Application {
 		    public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
 		         if (group.getSelectedToggle() != null) {
 		        	 if(soundOn.isSelected()) {
-		        		 System.out.println("soundon");
-		        		 SoundTest using_sound = new SoundTest();
+		        		 clip.play(1.0);
 		        		 boolean soundSetting = true;
 		        	 }
 		        	 if(soundOff.isSelected()) {
-		        		 System.out.println("soundoff");
+		        		 clip.stop();
 		        		 boolean soundSetting = false;
 		        	 }
 		         }
