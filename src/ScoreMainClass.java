@@ -14,7 +14,7 @@ public class ScoreMainClass extends Application {
 		hs.addScore("Hunter", 4);
 		hs.addScore("Sean", 5);
 
-		/*HighScore hs = new HighScore();
+		/*HighScore hs = new HighScore();hi
 		hs.addScore("Jarrett", 9001);
 		hs.addScore("John", 230);
 		hs.addScore("Laura", 220);
