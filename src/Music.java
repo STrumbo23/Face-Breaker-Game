@@ -9,5 +9,6 @@ public class Music
 		URL bitQuest = getClass().getResource("BitQuest.wav");
 		final AudioClip clip = new AudioClip(bitQuest.toString());
 		return clip;
+
 	}
 }
