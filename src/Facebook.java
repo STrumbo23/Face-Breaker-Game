@@ -1,5 +1,6 @@
 public class Facebook {
 	
+	//this line of code is new
     // get these from FB Dev App
     private static final String api_key = "MYAPIKEY";     
     private static final String secret = "MYSECRETKEY";
