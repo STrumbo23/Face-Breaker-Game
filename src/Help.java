@@ -13,6 +13,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Help extends Application {
+	
 	public static void main(String[] args) {
 		launch(args);
 	}

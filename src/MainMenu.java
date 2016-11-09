@@ -73,16 +73,20 @@ public class MainMenu extends Application {
 				mainStage.close();
 			}
 		});
+		help.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				Help help = new Help();
+				mainStage.close();
+			}
+		});
 		group.selectedToggleProperty().addListener(new ChangeListener<Toggle>(){
 		    public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
 		         if (group.getSelectedToggle() != null) {
 		        	 if(soundOn.isSelected()) {
 		        		playBGMusic.play(1.0);
-		        		boolean soundSetting = true;
 		        	 }
 		        	 if(soundOff.isSelected()) {
 		        		 playBGMusic.stop();
-		        		 boolean soundSetting = false;
 		        	 }
 		         }
 		     }
