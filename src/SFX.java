@@ -35,5 +35,23 @@ public class SFX
 			e.printStackTrace();
 		}
 	}
+	
+	public static void playBreak() {
+		try
+		{
+			File Break = new File("src/Break.wav");
+			Clip clip = AudioSystem.getClip();
+			clip.open(AudioSystem.getAudioInputStream(Break));
+			clip.start();
+			Thread.sleep(clip.getMicrosecondLength()/500);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
 
 }
