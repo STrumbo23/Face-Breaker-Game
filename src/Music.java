@@ -8,20 +8,22 @@ import javafx.scene.media.AudioClip;
 
 public class Music 
 {
-	public static void playYaverclap()
+	public static Clip playYaverclap()
 	{
 		try
 		{
-			File Yaverclap = new File("Yaverclap - The Sky.wav");
+			File Yaverclap = new File("src/Yaverclap - The Sky.wav");
 			Clip clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(Yaverclap));
-			clip.start();
-			Thread.sleep(clip.getMicrosecondLength()/500);
+		//	clip.start();
+			//Thread.sleep(clip.getMicrosecondLength()/500);
+			return clip;
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
+		return null;
 
 	}
 }
