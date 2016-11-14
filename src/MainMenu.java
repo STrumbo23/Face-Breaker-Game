@@ -75,7 +75,7 @@ public class MainMenu extends Application {
 		});
 		help.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
-				Help help = new Help();
+				Help help = new Help(mainStage);
 				mainStage.close();
 			}
 		});

@@ -24,17 +24,14 @@ public class HighScore {
 	//this function will return an arraylist with the scores in it.
 	public ArrayList<String> getScores(){ 
 		ArrayList<String> returnedScores = new ArrayList<>();
-		
-		
+	
 			for(String val: scores.keySet()) {
 				String key = val.toString();
 				String value = scores.get(val).toString();
 				returnedScores.add(key + " - " + value);
 				//System.out.println(key + " " + value);
 			}
-			
-			List<Integer> scoreValues = new ArrayList<Integer>(scores.values());
-			
+				
 		return returnedScores;
 	}
 	public void sortScores() {

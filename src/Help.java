@@ -8,40 +8,52 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Help extends Application {
-	
-	public static void main(String[] args) {
-		launch(args);
+public class Help {
+	Stage mainStage;
+	public Help(Stage mainStage) {
+		runHelp();
+		this.mainStage = mainStage;
 	}
-	public void start(Stage mainStage) {
-		mainStage.setTitle("Help");
+	
+	public void runHelp() {
+		
+		Stage stage = new Stage();
+		StackPane pane = new StackPane();
+		Scene scene = new Scene(pane, 800, 500);
+		Label helpTitle = new Label("FACE BREAKER GAME HELP");
+		stage.setTitle("HELP!");
+		helpTitle.getStyleClass().add("helpTitle");
+
+		StringBuilder text = addText();
+		Text help = new Text();
+		help.setText(text.toString());
+		help.getStyleClass().add("helpText");
 		
 		Button back = new Button("Back");
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				//mainStage.show();
-				//stage.show();
-				mainStage.close();
+				mainStage.show();
+				stage.close();
 			}
 		});
-
 		
-		StringBuilder text = addText();
-		Text help = new Text();
-		help.setText(text.toString());
-		
-		StackPane root = new StackPane();
+		StackPane.setAlignment(helpTitle, Pos.TOP_CENTER);
+		StackPane.setAlignment(help, Pos.CENTER);
 		StackPane.setAlignment(back, Pos.TOP_LEFT);
-		Scene scene = new Scene(root, 800, 500);
-		root.getChildren().addAll(help, back);
-
-		mainStage.setScene(scene);
-	    mainStage.show();
+		
+		pane.getChildren().addAll(back,helpTitle, help);
+		
+		scene.getStylesheets().add(this.getClass()
+        		.getResource("stylesheet.css").toExternalForm());
+		
+		stage.setScene(scene);
+		stage.show();
 	}
 	
 	public StringBuilder addText() {
@@ -63,7 +75,7 @@ public class Help extends Application {
         catch (IOException ex){
             ex.printStackTrace();
         }
-        System.out.println(contents.toString());
+     //   System.out.println(contents.toString());
         return contents;
 	}
     
