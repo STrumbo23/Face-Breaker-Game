@@ -9,7 +9,7 @@ public class SFX
 	{
 		try
 		{
-			File Boop = new File("src/Boop.wav");
+			File Boop = new File("Boop.wav");
 			Clip clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(Boop));
 			clip.start();
@@ -24,7 +24,7 @@ public class SFX
 	{
 		try
 		{
-			File Bounce = new File("src/Bounce.wav");
+			File Bounce = new File("Bounce.wav");
 			Clip clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(Bounce));
 			clip.start();
@@ -39,7 +39,7 @@ public class SFX
 	public static void playBreak() {
 		try
 		{
-			File Break = new File("src/Break.wav");
+			File Break = new File("Break.wav");
 			Clip clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(Break));
 			clip.start();
