@@ -43,6 +43,7 @@ public class SFX
 			Clip clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(Break));
 			clip.start();
+			clip.loop(Clip.LOOP_CONTINUOUSLY);
 			Thread.sleep(clip.getMicrosecondLength()/500);
 		}
 		catch(Exception e)

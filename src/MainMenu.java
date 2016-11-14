@@ -29,10 +29,10 @@ public class MainMenu extends Application {
 	
 	@Override 
 	public void start(Stage mainStage) {
-		//java.net.URL bitQuest = getClass().getResource("BitQuest.wav");
-		//final AudioClip clip = new AudioClip(bitQuest.toString());
+		//java.net.URL Yaverclap = getClass().getResource("Yaverclap.wav");
+		//final AudioClip clip = new AudioClip(Yaverclap.toString());
 		Music playMusic = new Music();
-		AudioClip playBGMusic = playMusic.playBitQuest();
+		AudioClip playBGMusic = playMusic.playYaverclap();
 		
 		mainStage.setTitle("FaceBreaker Game!");
 		Label title = new Label("FACE BREAKER GAME");
