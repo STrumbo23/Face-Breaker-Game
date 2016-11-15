@@ -70,7 +70,7 @@ public class MainMenu extends Application {
 	   
 		highScore.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
-				ScoreMainClass highscores = new ScoreMainClass();
+				ScoreMainClass highscores = new ScoreMainClass(mainStage);
 				mainStage.close();
 			}
 		});

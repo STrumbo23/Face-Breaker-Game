@@ -9,9 +9,12 @@ import java.util.Map;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
@@ -23,18 +26,23 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class ScoreMainClass extends Application {
-
-	public static void main(String[] args) {
-		launch(args);
+public class ScoreMainClass {
+	Stage mainStage;
+	public ScoreMainClass(Stage mainStage) {
+		runHighScores();
+		this.mainStage = mainStage;
 	}
+
 	
 	@SuppressWarnings("unchecked")
-	@Override 
-	public void start(Stage mainStage) throws FileNotFoundException {
-		mainStage.setTitle("High Scores");
-		mainStage.setWidth(500);
-		mainStage.setHeight(500);
+	public void runHighScores() {
+		Stage stage = new Stage();
+		
+		stage.setTitle("High Scores");
+		stage.setWidth(500);
+		stage.setHeight(500);
+		Label scoresTitle = new Label("HIGH SCORES");
+		scoresTitle.getStyleClass().add("helpTitle");
 
 		HighScore hs = new HighScore();
 		
@@ -61,13 +69,28 @@ public class ScoreMainClass extends Application {
  
   		    Label this_score = new Label(i +". " + name + "  " + val);
   		    vbox.getChildren().add(this_score);
-  		    
   		}
+        vbox.getStyleClass().add("vbox");
+        
+		Button back = new Button("Back");
+		back.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				mainStage.show();
+				stage.close();
+			}
+		});
         
 		StackPane root = new StackPane();
+		StackPane.setAlignment(scoresTitle, Pos.TOP_CENTER);
+		StackPane.setAlignment(back, Pos.TOP_LEFT);
 		Scene scene = new Scene(root, 500, 500);
-		root.getChildren().addAll(vbox);
-		mainStage.setScene(scene);
-	    mainStage.show();
+		root.getChildren().addAll(vbox, back, scoresTitle);
+		
+		scene.getStylesheets().add(this.getClass()
+        		.getResource("stylesheet.css").toExternalForm());
+		
+		stage.setScene(scene);
+	    stage.show();
 	}
 }

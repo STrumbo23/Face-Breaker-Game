@@ -35,6 +35,10 @@
 	-fx-text-fill: black;
 	-fx-font: 20px "Arial";
 }	
+.vbox {
+	-fx-alignment: CENTER;
+	-fx-font: 20px "Arial";
+}
 	
 	
 	
