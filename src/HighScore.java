@@ -14,8 +14,7 @@ public class HighScore {
 	}
 	//This is the method you call to add highscores to!
 	public void addScore(String name, int score) {
-		
-		//scores.put(name, score);
+		scores.put(name, score);
 	}
 	
 	public HashMap<String, Integer> returnScores() {
