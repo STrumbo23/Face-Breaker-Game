@@ -47,7 +47,12 @@ public class PlayGame {
 			level.setOnAction(new EventHandler<ActionEvent>() {
 				@Override
 				public void handle(ActionEvent e) {
-					PlayLevel level = new PlayLevel(levelSelection);
+					try {
+						PlayLevel level = new PlayLevel(levelSelection);
+					} catch (NullPointerException | MatrixOutOfBoundsException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			});
 			pane.getChildren().add(level);
