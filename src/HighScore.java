@@ -7,36 +7,27 @@ import java.util.*;
 import java.io.*;
 
 public class HighScore {
-	//private ArrayList<score> scores;
-	private HashMap<String, Integer> scores;
-	private static final String HIGHSCORE_FILE = "scores.txt";
-	//List<String> mapValues;
+	HashMap<String, Integer> scores = new HashMap<>();
 	
-
-	//Initialising an in and outputStream for working with the file
-	ObjectOutputStream outputStream = null;
-	ObjectInputStream inputStream = null;
-
 	public HighScore() {
-		 scores = new HashMap<>();
+		this.scores = scores;
 	}
-	
-	//this function will return an arraylist with the scores in it.
-	public ArrayList<String> getScores(){ 
-		ArrayList<String> returnedScores = new ArrayList<>();
-	
-			for(String val: scores.keySet()) {
-				String key = val.toString();
-				String value = scores.get(val).toString();
-				returnedScores.add(key + " - " + value);
-				//System.out.println(key + " " + value);
-			}
-				
-		return returnedScores;
-	}
-	public void sortScores() {
+	//This is the method you call to add highscores to!
+	public void addScore(String name, int score) {
 		
+		//scores.put(name, score);
 	}
+	
+	public HashMap<String, Integer> returnScores() {
+		scores.put("Jarrett", 1);
+		scores.put("John", 2);
+		scores.put("Laura", 3);
+		scores.put("Hunter", 4);
+		scores.put("Sean", 5);
+		
+		return scores;
+	}
+
 	/*public void getHighScoreString() {
 		String highScoreString = "";
 		/*int max = 50;
@@ -57,18 +48,8 @@ public class HighScore {
       //  return highScoreString;
 	}
 */
-	
-	/*
-	//will create a object and allows you to sort the arraylist with scores
-	private void sort(){
-		ScoreComparator comparator = new ScoreComparator();
-		Collections.sort(scores, comparator);
-	}
-	*/
-	//This is the method you call to add highscores to!
-	public void addScore(String name, int score) {
-			scores.put(name, score);	
-	}
+
+
 	/*
 	//load the arraylist that is in the high-score file and put it in the scores arraylist
 	public void LoadScoreFile(){
