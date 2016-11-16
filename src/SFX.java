@@ -9,7 +9,7 @@ public class SFX
 	{
 		try
 		{
-			File Boop = new File("Boop.wav");
+			File Boop = new File("src/Boop.wav");
 			Clip clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(Boop));
 			clip.start();
@@ -24,7 +24,7 @@ public class SFX
 	{
 		try
 		{
-			File Bounce = new File("Bounce.wav");
+			File Bounce = new File("src/Bounce.wav");
 			Clip clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(Bounce));
 			clip.start();
@@ -35,6 +35,7 @@ public class SFX
 			e.printStackTrace();
 		}
 	}
+<<<<<<< HEAD
 	
 	public static void playBreak() {
 		try
@@ -54,5 +55,7 @@ public class SFX
 	}
 	
 	
+=======
+>>>>>>> branch 'master' of https://github.com/Face-Breaker-Bridgewater/Face-Breaker-Game.git
 
 }

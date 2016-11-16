@@ -77,7 +77,6 @@ public class MainMenu extends Application {
 		    public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
 		         if (group.getSelectedToggle() != null) {
 		        	 if(soundOn.isSelected()) {
-		        		
 		        		playBGMusic.play(1.0);
 		        		boolean soundSetting = true;
 		        	 }

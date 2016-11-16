@@ -1,27 +1,14 @@
-import java.io.File;
 import java.net.URL;
-
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 
 import javafx.scene.media.AudioClip;
 
 public class Music 
 {
-	public static void playYaverclap()
+	public AudioClip playBitQuest()
 	{
-		try
-		{
-			File Yaverclap = new File("Yaverclap - The Sky.wav");
-			Clip clip = AudioSystem.getClip();
-			clip.open(AudioSystem.getAudioInputStream(Yaverclap));
-			clip.start();
-			Thread.sleep(clip.getMicrosecondLength()/500);
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+		URL bitQuest = getClass().getResource("BitQuest.wav");
+		final AudioClip clip = new AudioClip(bitQuest.toString());
+		return clip;
 
 	}
 }
