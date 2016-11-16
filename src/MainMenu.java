@@ -85,6 +85,7 @@ public class MainMenu extends Application {
 		         if (group.getSelectedToggle() != null) {
 		        	 if(soundOn.isSelected()) {
 		        		playBGMusic.start();
+		        		playBGMusic.loop(Clip.LOOP_CONTINUOUSLY);
 		        	 }
 		        	 if(soundOff.isSelected()) {
 		        		playBGMusic.stop();
